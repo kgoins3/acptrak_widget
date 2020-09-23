@@ -1,0 +1,8 @@
+VAR
+	pUserData : REFERENCE TO UserData_typ;
+	Vis : McAcpTrakAssemblyVisData;
+	SizeofVis : UDINT := 0;
+	NumVisShuttle : USINT := 0;
+	i : USINT := 0;
+	userVis : {REDUND_UNREPLICABLE} UserVis_typ;
+END_VAR

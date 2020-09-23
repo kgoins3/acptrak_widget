@@ -1,0 +1,4 @@
+VAR
+	animData : animData_typ;
+	i : USINT;
+END_VAR

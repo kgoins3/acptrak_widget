@@ -1,0 +1,14 @@
+VAR
+	gShuttleMon : McAcpTrakAssemblyMonData;
+	gTrak : Trak_typ;
+END_VAR
+VAR CONSTANT
+	NUM_SYNC_OBJS : USINT := 20;
+	MAX_NUM_POCKETS : USINT := 16;
+END_VAR
+VAR
+	Infeed : StarwheelSectorLogic_typ;
+END_VAR
+VAR CONSTANT
+	MAX_NUM_PERIODS : USINT := 5;
+END_VAR

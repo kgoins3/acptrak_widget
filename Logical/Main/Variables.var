@@ -1,0 +1,17 @@
+VAR CONSTANT
+	PI : REAL := 3.14159265359;
+END_VAR
+VAR
+	OutfeedAxisPars : MpAxisBasicParType;
+	InfeedAxisPars : MpAxisBasicParType;
+	AsmPowerOn : MC_BR_AsmPowerOn_AcpTrak;
+	ShSpawn : ShuttleSpawn;
+	AsmReadStatus : MC_BR_AsmReadStatus_AcpTrak;
+	index : INT;
+	firstTerm : REAL;
+	secondTerm : REAL;
+	shReadInfo : MC_BR_ShReadInfo_AcpTrak;
+	testVar : REAL;
+	indexPeriod : INT;
+	indexPocket : INT;
+END_VAR

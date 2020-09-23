@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="Sector_Spawn" Type="sector">
+    <Selector ID="Type" Value="Composed">
+      <Group ID="StartSegment">
+        <Property ID="SegmentRef" Value="::SEG_A_7" />
+        <Property ID="Position" Value="0.33" />
+        <Property ID="PositionRelativeTo" Value="FromEnd" />
+      </Group>
+      <Group ID="EndSegment">
+        <Property ID="SegmentRef" Value="::SEG_A_7" />
+      </Group>
+    </Selector>
+  </Element>
+  <Element ID="Sector_Infeed" Type="sector">
+    <Selector ID="Type" Value="Composed">
+      <Group ID="StartSegment">
+        <Property ID="SegmentRef" Value="::SEG_A_2" />
+      </Group>
+      <Group ID="IntermediateSegments">
+        <Property ID="SegmentRef[1]" Value="::SEG_A_1" />
+        <Property ID="SegmentRef[2]" Value="::SEG_A_12" />
+        <Property ID="SegmentRef[3]" Value="::SEG_A_11" />
+        <Property ID="SegmentRef[4]" Value="::SEG_A_10" />
+        <Property ID="SegmentRef[5]" Value="::SEG_A_9" />
+      </Group>
+      <Group ID="EndSegment">
+        <Property ID="SegmentRef" Value="::SEG_A_8" />
+      </Group>
+    </Selector>
+  </Element>
+</Configuration>

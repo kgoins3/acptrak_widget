@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="List_PP_Spawn" Type="processpointlist">
+    <Selector ID="ProcessPoint[0]">
+      <Property ID="Name" Value="PP_Spawn_In" />
+      <Property ID="SectorRef" Value="Sector_Spawn" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+    <Selector ID="ProcessPoint[1]">
+      <Property ID="Name" Value="PP_Spawn_Out" />
+      <Property ID="SectorRef" Value="Sector_Spawn" />
+      <Property ID="PositionRelativeTo" Value="FromEnd" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+  </Element>
+  <Element ID="List_PP_Outfeed" Type="processpointlist">
+    <Selector ID="ProcessPoint[0]">
+      <Property ID="Name" Value="PP_Outfeed_Sync" />
+      <Property ID="SectorRef" Value="Sector_Outfeed" />
+      <Property ID="Position" Value="0.165" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[1]">
+      <Property ID="Name" Value="PP_Outfeed_Release" />
+      <Property ID="SectorRef" Value="Sector_Outfeed" />
+      <Property ID="Position" Value="0.57" />
+      <Property ID="PositionRelativeTo" Value="FromEnd" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+  </Element>
+  <Element ID="List_PP_Infeed" Type="processpointlist">
+    <Selector ID="ProcessPoint[0]">
+      <Property ID="Name" Value="PP_Infeed_Sync" />
+      <Property ID="SectorRef" Value="Sector_Infeed" />
+      <Property ID="Position" Value="0.45" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+    <Selector ID="ProcessPoint[1]">
+      <Property ID="Name" Value="PP_Infeed_Release" />
+      <Property ID="SectorRef" Value="Sector_Infeed" />
+      <Property ID="Position" Value="0.465" />
+      <Property ID="PositionRelativeTo" Value="FromEnd" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+  </Element>
+</Configuration>

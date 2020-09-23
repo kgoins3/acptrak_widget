@@ -1,0 +1,9 @@
+
+TYPE
+	animData_typ : 	STRUCT 
+		PosX : ARRAY[0..149]OF REAL;
+		RotZ : ARRAY[0..149]OF REAL;
+		PosY : ARRAY[0..149]OF REAL;
+		Avail : ARRAY[0..149]OF SINT;
+	END_STRUCT;
+END_TYPE

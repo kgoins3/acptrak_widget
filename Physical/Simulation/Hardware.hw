@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.4.67?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="0AC808.9-1" Type="0AC808.9-1" Version="1.0.0.0">
+    <Connection Connector="ETH1" TargetModule="5LS182.6-2" TargetConnector="IF1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Connection Connector="ETH2" TargetModule="SEG_A_1" TargetConnector="PLK3">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+  </Module>
+  <Module Name="5LS182.6-2" Type="5LS182.6-2" Version="1.4.0.0">
+    <Connection Connector="SL" TargetModule="PC" TargetConnector="SL2" />
+  </Module>
+  <Module Name="PC" Type="PC_any" Version="1.1.0.0" OrderNumber="PC">
+    <Parameter ID="ConfigurationID" Value="StarwheelSim_Simulation" />
+    <Parameter ID="VolatileGlobalPvSize" Value="132000" />
+    <Parameter ID="SystemTick" Value="400" />
+    <Parameter ID="Cyclic1Duration" Value="400" />
+    <Parameter ID="Cyclic1Tolerance" Value="0" />
+    <Parameter ID="Cyclic2Duration" Value="2000" />
+    <Parameter ID="Cyclic2Tolerance" Value="0" />
+    <Group ID="FileDevice1" />
+    <Parameter ID="FileDeviceName1" Value="SvgData" />
+    <Parameter ID="FileDevicePath1" Value="../../../../Logical/Visuals" />
+    <Group ID="FileDevice2" />
+    <Parameter ID="FileDeviceName2" Value="User" />
+    <Parameter ID="FileDevicePath2" Value="C:\ACPtrak\TeslaStarwheel\TrakPower" />
+    <Parameter ID="ActivateOpcUa" Value="1" />
+    <Parameter ID="OpcUaInformationModels_PV_Version" Value="1" />
+  </Module>
+  <Module Name="SEG_A_1" Type="8YF1I01.AA66.00-1" Version="0.0.0.3">
+    <Connection Connector="PLK1" TargetModule="SEG_A_2" TargetConnector="PLK2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Connection Connector="PLK2" TargetModule="SEG_A_12" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Connection Connector="PLK3" TargetModule="0AC808.9-1" TargetConnector="ETH2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Parameter ID="McTypeID" Location="DriveConfiguration" Value="LLMConfig" />
+    <Parameter ID="Shape" Location="DriveConfiguration/Segment" Value="STRAIGHT660" />
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="SEG_A_1" />
+    <Parameter ID="StopReaction" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
+    <Parameter ID="SpeedFilter" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
+  </Module>
+  <Module Name="SEG_A_10" Type="8YF1I01.BB4B.00-1" Version="0.0.0.3">
+    <Connection Connector="PLK1" TargetModule="SEG_A_11" TargetConnector="PLK2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Connection Connector="PLK2" TargetModule="SEG_A_9" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="::SEG_A_10" />
+  </Module>
+  <Module Name="SEG_A_11" Type="8YF1I01.BB4B.00-1" Version="0.0.0.3">
+    <Connection Connector="PLK2" TargetModule="SEG_A_10" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="::SEG_A_11" />
+  </Module>
+  <Module Name="SEG_A_12" Type="8YF1I01.BA2B.00-1" Version="0.0.0.3">
+    <Connection Connector="PLK1" TargetModule="SEG_A_1" TargetConnector="PLK2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="::SEG_A_12" />
+  </Module>
+  <Module Name="SEG_A_2" Type="8YF1I01.AB2B.00-1" Version="0.0.0.3">
+    <Connection Connector="PLK1" TargetModule="SEG_A_3" TargetConnector="PLK2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Connection Connector="PLK2" TargetModule="SEG_A_1" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="::SEG_A_2" />
+  </Module>
+  <Module Name="SEG_A_3" Type="8YF1I01.BB4B.00-1" Version="0.0.0.3">
+    <Connection Connector="PLK1" TargetModule="SEG_A_4" TargetConnector="PLK2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Connection Connector="PLK2" TargetModule="SEG_A_2" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="::SEG_A_3" />
+  </Module>
+  <Module Name="SEG_A_4" Type="8YF1I01.BB4B.00-1" Version="0.0.0.3">
+    <Connection Connector="PLK1" TargetModule="SEG_A_5" TargetConnector="PLK2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Connection Connector="PLK2" TargetModule="SEG_A_3" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="::SEG_A_4" />
+  </Module>
+  <Module Name="SEG_A_5" Type="8YF1I01.BB4B.00-1" Version="0.0.0.3">
+    <Connection Connector="PLK1" TargetModule="SEG_A_6" TargetConnector="PLK2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Connection Connector="PLK2" TargetModule="SEG_A_4" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="::SEG_A_5" />
+  </Module>
+  <Module Name="SEG_A_6" Type="8YF1I01.BA2B.00-1" Version="0.0.0.3">
+    <Connection Connector="PLK1" TargetModule="SEG_A_7" TargetConnector="PLK2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Connection Connector="PLK2" TargetModule="SEG_A_5" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="::SEG_A_6" />
+  </Module>
+  <Module Name="SEG_A_7" Type="8YF1I01.AA66.00-1" Version="0.0.0.3">
+    <Connection Connector="PLK1" TargetModule="SEG_A_8" TargetConnector="PLK2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Connection Connector="PLK2" TargetModule="SEG_A_6" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="::SEG_A_7" />
+  </Module>
+  <Module Name="SEG_A_8" Type="8YF1I01.AB2B.00-1" Version="0.0.0.3">
+    <Connection Connector="PLK1" TargetModule="SEG_A_9" TargetConnector="PLK2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Connection Connector="PLK2" TargetModule="SEG_A_7" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="::SEG_A_8" />
+  </Module>
+  <Module Name="SEG_A_9" Type="8YF1I01.BB4B.00-1" Version="0.0.0.3">
+    <Connection Connector="PLK1" TargetModule="SEG_A_10" TargetConnector="PLK2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Connection Connector="PLK2" TargetModule="SEG_A_8" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="::SEG_A_9" />
+  </Module>
+</Hardware>

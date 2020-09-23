@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OpcUaSource FileVersion="7" ArVersion="A4.73">
+  <Aliases>
+    <ACLAliases />
+    <EURangeViolationAliases />
+    <EURangesAliases />
+    <EngineeringUnitAliases />
+  </Aliases>
+  <DefaultView>
+    <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="gTrak">
+          <Variable Name="Cmd">
+            <Variable Name="PowerOn" />
+          </Variable>
+        </Variable>
+      </GlobalVariables>
+      <Task Name="Main" />
+      <Task Name="WidgetData">
+        <Variable Name="animData">
+          <Variable Name="PosX" />
+          <Variable Name="RotZ" />
+          <Variable Name="PosY" />
+          <Variable Name="Avail" />
+        </Variable>
+      </Task>
+    </Module>
+  </DefaultView>
+</OpcUaSource>
