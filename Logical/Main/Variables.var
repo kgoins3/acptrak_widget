@@ -14,4 +14,12 @@ VAR
 	testVar : REAL;
 	indexPeriod : INT;
 	indexPocket : INT;
+	topRoute : SimpleRoute;
+	midRoute : SimpleRoute;
+	botRoute : SimpleRoute;
+	VarA : UINT;
+	VarB : UINT;
+	VarC : UINT;
+	Rand16 : UINT;
+	oneshot : BOOL := TRUE;
 END_VAR

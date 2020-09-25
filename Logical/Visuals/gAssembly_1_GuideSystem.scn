@@ -2,10 +2,10 @@
 <Object objecttypeid="1" name="ACOPOStrak Scene" visible="1">
 	<ParID parid="80" val="0"/>
 	<ParID parid="81" val="60.0"/>
-	<ParID parid="82" val="0.31500000000000017"/>
+	<ParID parid="82" val="0.53500000000000048"/>
 	<ParID parid="90" val="0.0"/>
-	<ParID parid="100" val="329.99999999999994"/>
-	<ParID parid="101" val="-815.00000000000045"/>
+	<ParID parid="100" val="330.00000000000011"/>
+	<ParID parid="101" val="-1145.0000000000009"/>
 	<ParID parid="102" val="866.02540378443859"/>
 	<ParID parid="103" val="0.0"/>
 	<ParID parid="104" val="0.50000000000000011"/>
@@ -82,6 +82,33 @@
 				<ParID parid="103" val="180"/>
 				<ParID parid="104" val="-0"/>
 				<ParID parid="105" val="180"/>
+				<ParID parid="120" val="9"/>
+			</Object>
+			<Object objecttypeid="550" name="GuideSystem (SEG_B_13, SEG_B_14, SEG_B_15, SEG_B_16, SEG_B_17)" visible="1">
+				<ParID parid="100" val="660.00000000000011"/>
+				<ParID parid="101" val="-660.00000000000034"/>
+				<ParID parid="102" val="-8.0826688743725337e-14"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="-0"/>
+				<ParID parid="105" val="180"/>
+				<ParID parid="120" val="9"/>
+			</Object>
+			<Object objecttypeid="550" name="GuideSystem (SEG_B_18)" visible="1">
+				<ParID parid="100" val="660.00000000000034"/>
+				<ParID parid="101" val="-1290.0000000000007"/>
+				<ParID parid="102" val="-8.0826688743725374e-14"/>
+				<ParID parid="103" val="2.5444437451708134e-14"/>
+				<ParID parid="104" val="180"/>
+				<ParID parid="105" val="-0"/>
+				<ParID parid="120" val="5"/>
+			</Object>
+			<Object objecttypeid="550" name="GuideSystem (SEG_B_19, SEG_B_20, SEG_B_21, SEG_B_22, SEG_B_23)" visible="1">
+				<ParID parid="100" val="1.1102230246251565e-13"/>
+				<ParID parid="101" val="-1290.0000000000014"/>
+				<ParID parid="102" val="-4.9303806576313238e-29"/>
+				<ParID parid="103" val="2.5444437451708134e-14"/>
+				<ParID parid="104" val="180"/>
+				<ParID parid="105" val="-0"/>
 				<ParID parid="120" val="9"/>
 			</Object>
 		</Object>

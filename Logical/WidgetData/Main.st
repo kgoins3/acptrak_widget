@@ -13,4 +13,5 @@ PROGRAM _CYCLIC
 		animData.Avail[i]	:= BOOL_TO_SINT(gShuttleMon.Shuttle[i].Available);
 	END_FOR;	
 	
+	
 END_PROGRAM

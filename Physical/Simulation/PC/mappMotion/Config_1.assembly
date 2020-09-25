@@ -32,6 +32,30 @@
           </Group>
         </Selector>
       </Group>
+      <Group ID="Track[2]">
+        <Group ID="Segments">
+          <Property ID="SegmentRef[1]" Value="::SEG_B_13" />
+          <Property ID="SegmentRef[2]" Value="::SEG_B_14" />
+          <Property ID="SegmentRef[3]" Value="::SEG_B_15" />
+          <Property ID="SegmentRef[4]" Value="::SEG_B_16" />
+          <Property ID="SegmentRef[5]" Value="::SEG_B_17" />
+          <Property ID="SegmentRef[6]" Value="::SEG_B_18" />
+          <Property ID="SegmentRef[7]" Value="::SEG_B_19" />
+          <Property ID="SegmentRef[8]" Value="::SEG_B_20" />
+          <Property ID="SegmentRef[9]" Value="::SEG_B_21" />
+          <Property ID="SegmentRef[10]" Value="::SEG_B_22" />
+          <Property ID="SegmentRef[11]" Value="::SEG_B_23" />
+        </Group>
+        <Selector ID="Position" Value="RelativeToOne">
+          <Group ID="TrackSegmentPosition">
+            <Property ID="SegmentRef" Value="::SEG_B_13" />
+          </Group>
+          <Group ID="Base">
+            <Property ID="SegmentRef" Value="::SEG_A_6" />
+            <Property ID="PositionRelativeTo" Value="FromEnd" />
+          </Group>
+        </Selector>
+      </Group>
     </Group>
     <Group ID="CommonSegmentSettings">
       <Property ID="SegmentSimulationOnPLC" Value="Off" />
@@ -65,6 +89,10 @@
     </Group>
     <Group ID="Shuttles">
       <Property ID="MaxShuttleCount" Value="50" />
+      <Group ID="DistanceReserve">
+        <Property ID="Collision" Value="0.002" />
+        <Property ID="ErrorStop" Value="0.006" />
+      </Group>
       <Group ID="ShuttleStereotypes">
         <Property ID="ShuttleStRef[1]" Value="ShuttleStereotype_1" />
       </Group>

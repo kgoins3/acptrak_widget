@@ -1,30 +1,5 @@
 
 PROGRAM _INIT
-		
-	//	----------------------------------------------------------------------- infeed axis configuration parameters
-	
-	InfeedAxisPars.Acceleration		:= 90.0;
-	InfeedAxisPars.Deceleration		:= 90.0;
-	InfeedAxisPars.Velocity			:= 90.0;
-	
-	InfeedAxisPars.Direction		:= mcDIR_POSITIVE;
-	InfeedAxisPars.Homing.Mode		:= mcHOMING_DIRECT;
-	InfeedAxisPars.Position			:= 0.0;
-	
-	Infeed.Starwheel.Axis.MpLink		:= ADR( gAxis_1 );
-	Infeed.Starwheel.Axis.Parameters	:= ADR( InfeedAxisPars );
-	Infeed.Starwheel.Axis.Enable		:= TRUE;
-
-	//	----------------------------------------------------------------------- Infeed starwheel Pars
-	
-	Infeed.Par.SectorTangentPos		:= 1.71;			// sector position of the tangent point
-	Infeed.Par.R1					:= 0.14224;			// radius of curvature of the tangent point
-	Infeed.Par.R2					:= 0.3202758;		// radius of curvature of the track system at the tangent point
-	Infeed.Par.Rp					:= 0.025;			// radius of the product
-	Infeed.Par.deltaT				:= t#10ms;			// starwheel encoder signal delay - for predictive compensation
-	Infeed.Par.PocketCount			:= 6;				// number of pockets on this starwheel
-	Infeed.Par.ReleaseVelocity		:= 1.8;				// release velocity to next station
-	Infeed.Par.PositionSyncPP		:= 0.45;			// position 
 
 	//	----------------------------------------------------------------------- Init trak assembly
 	
@@ -42,7 +17,7 @@ PROGRAM _INIT
 	ShSpawn.RouteVelocity		:= 1.0;
 	
 	ShSpawn.Sector				:= ADR( Sector_Spawn );
-	ShSpawn.DstSector			:= ADR( Sector_Infeed );
+	ShSpawn.DstSector			:= ADR( Sector_Mid );
 	ShSpawn.DstSectorPosition	:= 0.0;
 	
 	ShSpawn.NumShuttleBatch				:= 1;
@@ -65,27 +40,14 @@ PROGRAM _CYCLIC
 			
 			IF gTrak.Cmd.PowerOn THEN
 				AsmPowerOn.Execute					:= TRUE;
-				Infeed.Starwheel.Axis.Power			:= TRUE;
 			END_IF;
 			
-			IF AsmPowerOn.Done AND Infeed.Starwheel.Axis.PowerOn THEN
-				Infeed.Starwheel.Axis.Home			:= TRUE;
+			IF AsmPowerOn.Done THEN
+				ShSpawn.Enable						:= TRUE;
 				gTrak.Status.State					:= 1;
 			END_IF;
 			
 		1://	----------------------------------------------------------------------- Powering on / start Starwheel.Axis homing
-			
-			IF Infeed.Starwheel.Axis.IsHomed THEN
-				Infeed.Starwheel.Axis.Home			:= FALSE;
-				Infeed.Starwheel.Axis.MoveVelocity	:= TRUE;
-			END_IF;
-			
-			IF Infeed.Starwheel.Axis.InVelocity THEN	// outfeed set to half velocity, same accel, so infeed will reach speed last
-				ShSpawn.Enable				:= TRUE;
-				gTrak.Status.State 			:= 2;
-			END_IF;
-			
-		2://	----------------------------------------------------------------------- Homed, powered, begin sync code	
 			
 			IF ShSpawn.SpawnValid THEN
 				ShSpawn.AcknSpawn			:= TRUE;
@@ -95,16 +57,45 @@ PROGRAM _CYCLIC
 				ShSpawn.Enable				:= FALSE;
 			END_IF;
 			
-			// Starwheel code
-			act_Sect_Star1;
-			
-			// hacky speed ramp-up
-			IF gTrak.Par.PPM < 500 THEN
-				gTrak.Par.PPM				:= gTrak.Par.PPM + ( 0.002 );
+			IF oneshot THEN
+				VarA			:= 13;
+				VarB			:= 9;
+				VarC			:= 7;
+				Rand16			:= 13;
+				
+				oneshot			:= FALSE;
 			END_IF;
+	
+			Rand16		:= Rand16 XOR SHL(Rand16,VarA);
+			Rand16		:= Rand16 XOR SHR(Rand16,VarB);
+			Rand16		:= Rand16 XOR SHL(Rand16,VarC);	
+		
+			midRoute.Enable			:= TRUE;
+			midRoute.ProcessPoint	:= PP_MidRoute;
+			midRoute.Acceleration	:= gTrak.Par.Acceleration;
+			midRoute.Velocity		:= gTrak.Par.Velocity;
+			midRoute.RouteVelocity	:= gTrak.Par.Velocity;		
 			
-			InfeedAxisPars.Velocity			:= gTrak.Par.PPM / USINT_TO_REAL(Infeed.Par.PocketCount) * 6.0;	// convert PPM command to degrees per second
-			Infeed.Starwheel.Axis.Update	:= NOT(Infeed.Starwheel.Axis.Update);
+			IF Rand16 > 32767 THEN
+				midRoute.Destination	:= Sector_Bottom; // randomly pick between bot and top?
+			ELSE
+				midRoute.Destination	:= Sector_Top;
+			END_IF;				
+				
+			botRoute.Enable			:= TRUE;
+			botRoute.ProcessPoint	:= PP_BotRoute;
+			botRoute.Acceleration	:= gTrak.Par.Acceleration;
+			botRoute.Velocity		:= gTrak.Par.Velocity;
+			botRoute.RouteVelocity	:= gTrak.Par.Velocity;
+			botRoute.Destination	:= Sector_Mid;
+		
+			topRoute.Enable			:= TRUE;
+			topRoute.ProcessPoint	:= PP_TopRoute;
+			topRoute.Acceleration	:= gTrak.Par.Acceleration;
+			topRoute.Velocity		:= gTrak.Par.Velocity;
+			topRoute.RouteVelocity	:= gTrak.Par.Velocity;
+			topRoute.Destination	:= Sector_Top;
+		
 		
 	END_CASE;
 	
@@ -113,7 +104,8 @@ PROGRAM _CYCLIC
 	AsmReadStatus();
 	ShSpawn();
 	
-	// mpAxisBasic fub
-	Infeed.Starwheel.Axis();
+	midRoute();
+	botRoute();
+	topRoute();
 	 
 END_PROGRAM

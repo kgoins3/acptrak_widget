@@ -11,4 +11,15 @@ VAR
 	SEG_A_10 : McSegmentType;
 	SEG_A_11 : McSegmentType;
 	SEG_A_12 : McSegmentType;
+	SEG_B_13 : McSegmentType;
+	SEG_B_14 : McSegmentType;
+	SEG_B_15 : McSegmentType;
+	SEG_B_16 : McSegmentType;
+	SEG_B_17 : McSegmentType;
+	SEG_B_18 : McSegmentType;
+	SEG_B_19 : McSegmentType;
+	SEG_B_20 : McSegmentType;
+	SEG_B_21 : McSegmentType;
+	SEG_B_22 : McSegmentType;
+	SEG_B_23 : McSegmentType;
 END_VAR

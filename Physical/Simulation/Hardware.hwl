@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <BR.AS.HardwareTopology Version="0.0.0.1">
+  <TimeStamps>
+    <TimeStamp LogicalPath="Simulation.Hardware.hw" LastWriteTime="09/24/2020 10:59:44" />
+  </TimeStamps>
   <Modules>
     <Module Name="PC" Type="PC_any" X="100" Y="100" />
     <Module Name="5LS182.6-2" Type="5LS182.6-2" X="418" Y="123" />
@@ -16,6 +19,17 @@
     <Module Name="SEG_A_10" Type="8YF1I01.BB4B.00-1" X="595" Y="538" />
     <Module Name="SEG_A_11" Type="8YF1I01.BB4B.00-1" X="632" Y="464" />
     <Module Name="SEG_A_12" Type="8YF1I01.BA2B.00-1" X="744" Y="428" />
+    <Module Name="SEG_B_13" Type="8YF1I01.AB2B.00-1" X="1271" Y="826.827332" />
+    <Module Name="SEG_B_14" Type="8YF1I01.BB4B.00-1" X="1482.65674" Y="861.8785" />
+    <Module Name="SEG_B_15" Type="8YF1I01.BB4B.00-1" X="1569.05676" Y="923.0785" />
+    <Module Name="SEG_B_16" Type="8YF1I01.BB4B.00-1" X="1482.65674" Y="1006.38873" />
+    <Module Name="SEG_B_17" Type="8YF1I01.BA2B.00-1" X="1291.98352" Y="1085.70288" />
+    <Module Name="SEG_B_18" Type="8YF1I01.AA66.00-1" X="995.8567" Y="1085.70288" />
+    <Module Name="SEG_B_19" Type="8YF1I01.AB2B.00-1" X="797.4313" Y="1085.70288" />
+    <Module Name="SEG_B_20" Type="8YF1I01.BB4B.00-1" X="695.991333" Y="1006.38873" />
+    <Module Name="SEG_B_21" Type="8YF1I01.BB4B.00-1" X="650.3186" Y="923.0785" />
+    <Module Name="SEG_B_22" Type="8YF1I01.BB4B.00-1" X="695.991333" Y="837.193237" />
+    <Module Name="SEG_B_23" Type="8YF1I01.BA2B.00-1" X="809.114868" Y="811.6663" />
   </Modules>
   <Links>
     <Link From="0AC808.9-1" To="5LS182.6-2" FromPort="ETH1" ToPort="IF1" IsRoutedByUser="False">
@@ -48,6 +62,16 @@
       <Point X="1344.312" Y="475.7168" />
       <Point X="1344.312" Y="459.7168" />
       <Point X="1344.312" Y="459.7168" />
+    </Link>
+    <Link From="SEG_A_1" To="SEG_A_12" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="847.6" Y="458.8" />
+      <Point X="847.6" Y="458.8" />
+      <Point X="847.6" Y="474.8" />
+      <Point X="847.6" Y="485" />
+      <Point X="1071.4" Y="485" />
+      <Point X="1071.4" Y="464.8" />
+      <Point X="1071.4" Y="458.8" />
+      <Point X="1071.4" Y="458.8" />
     </Link>
     <Link From="SEG_A_10" To="SEG_A_11" FromPort="PLK1" ToPort="PLK2" IsRoutedByUser="False">
       <Point X="648.2" Y="577.6" />
@@ -139,15 +163,123 @@
       <Point X="666.009644" Y="654.810059" />
       <Point X="666.009644" Y="654.810059" />
     </Link>
-    <Link From="SEG_A_12" To="SEG_A_1" FromPort="PLK1" ToPort="PLK2" IsRoutedByUser="False">
-      <Point X="847.6" Y="458.8" />
-      <Point X="847.6" Y="458.8" />
-      <Point X="847.6" Y="474.8" />
-      <Point X="847.6" Y="485" />
-      <Point X="1071.4" Y="485" />
-      <Point X="1071.4" Y="464.8" />
-      <Point X="1071.4" Y="458.8" />
-      <Point X="1071.4" Y="458.8" />
+    <Link From="0AC808.9-1" To="SEG_B_18" FromPort="ETH3" ToPort="PLK3" IsRoutedByUser="False">
+      <Point X="586" Y="224" />
+      <Point X="586" Y="224" />
+      <Point X="586" Y="212" />
+      <Point X="586" Y="198" />
+      <Point X="725" Y="198" />
+      <Point X="725" Y="735" />
+      <Point X="795" Y="735" />
+      <Point X="795" Y="865" />
+      <Point X="985" Y="865" />
+      <Point X="985" Y="1135" />
+      <Point X="1126.25671" Y="1135" />
+      <Point X="1126.25671" Y="1122.50293" />
+      <Point X="1126.25671" Y="1116.50293" />
+      <Point X="1126.25671" Y="1116.50293" />
+    </Link>
+    <Link From="SEG_B_18" To="SEG_B_17" FromPort="PLK1" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="1148.25671" Y="1116.50293" />
+      <Point X="1148.25671" Y="1116.50293" />
+      <Point X="1148.25671" Y="1122.50293" />
+      <Point X="1148.25671" Y="1145" />
+      <Point X="1395.58362" Y="1145" />
+      <Point X="1395.58362" Y="1132.50293" />
+      <Point X="1395.58362" Y="1116.50293" />
+      <Point X="1395.58362" Y="1116.50293" />
+    </Link>
+    <Link From="SEG_B_17" To="SEG_B_16" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="1349.58362" Y="1116.50293" />
+      <Point X="1349.58362" Y="1116.50293" />
+      <Point X="1349.58362" Y="1132.50293" />
+      <Point X="1349.58362" Y="1152" />
+      <Point X="1535.85693" Y="1152" />
+      <Point X="1535.85693" Y="1067.98877" />
+      <Point X="1535.85693" Y="1045.98877" />
+      <Point X="1535.85693" Y="1045.98877" />
+    </Link>
+    <Link From="SEG_B_16" To="SEG_B_15" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="1515.85693" Y="1045.98877" />
+      <Point X="1515.85693" Y="1045.98877" />
+      <Point X="1515.85693" Y="1067.98877" />
+      <Point X="1515.85693" Y="1075" />
+      <Point X="1622.257" Y="1075" />
+      <Point X="1622.257" Y="984.678467" />
+      <Point X="1622.257" Y="962.678467" />
+      <Point X="1622.257" Y="962.678467" />
+    </Link>
+    <Link From="SEG_B_15" To="SEG_B_14" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="1602.257" Y="962.678467" />
+      <Point X="1602.257" Y="962.678467" />
+      <Point X="1602.257" Y="984.678467" />
+      <Point X="1602.257" Y="995" />
+      <Point X="1535.85693" Y="995" />
+      <Point X="1535.85693" Y="923.478455" />
+      <Point X="1535.85693" Y="901.478455" />
+      <Point X="1535.85693" Y="901.478455" />
+    </Link>
+    <Link From="SEG_B_14" To="SEG_B_13" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="1515.85693" Y="901.478455" />
+      <Point X="1515.85693" Y="901.478455" />
+      <Point X="1515.85693" Y="923.478455" />
+      <Point X="1515.85693" Y="935" />
+      <Point X="1389.4" Y="935" />
+      <Point X="1389.4" Y="873.6274" />
+      <Point X="1389.4" Y="857.6274" />
+      <Point X="1389.4" Y="857.6274" />
+    </Link>
+    <Link From="SEG_B_18" To="SEG_B_19" FromPort="PLK2" ToPort="PLK2" IsRoutedByUser="False">
+      <Point X="1104.25671" Y="1116.50293" />
+      <Point X="1104.25671" Y="1116.50293" />
+      <Point X="1104.25671" Y="1122.50293" />
+      <Point X="1104.25671" Y="1145" />
+      <Point X="869.8313" Y="1145" />
+      <Point X="869.8313" Y="1132.50293" />
+      <Point X="869.8313" Y="1116.50293" />
+      <Point X="869.8313" Y="1116.50293" />
+    </Link>
+    <Link From="SEG_B_19" To="SEG_B_20" FromPort="PLK1" ToPort="PLK2" IsRoutedByUser="False">
+      <Point X="915.8313" Y="1116.50293" />
+      <Point X="915.8313" Y="1116.50293" />
+      <Point X="915.8313" Y="1132.50293" />
+      <Point X="915.8313" Y="1152" />
+      <Point X="729.1913" Y="1152" />
+      <Point X="729.1913" Y="1067.98877" />
+      <Point X="729.1913" Y="1045.98877" />
+      <Point X="729.1913" Y="1045.98877" />
+    </Link>
+    <Link From="SEG_B_20" To="SEG_B_21" FromPort="PLK1" ToPort="PLK2" IsRoutedByUser="False">
+      <Point X="749.1913" Y="1045.98877" />
+      <Point X="749.1913" Y="1045.98877" />
+      <Point X="749.1913" Y="1067.98877" />
+      <Point X="749.1913" Y="1075" />
+      <Point X="683.518555" Y="1075" />
+      <Point X="683.518555" Y="984.678467" />
+      <Point X="683.518555" Y="962.678467" />
+      <Point X="683.518555" Y="962.678467" />
+    </Link>
+    <Link From="SEG_B_21" To="SEG_B_22" FromPort="PLK1" ToPort="PLK2" IsRoutedByUser="False">
+      <Point X="703.518555" Y="962.678467" />
+      <Point X="703.518555" Y="962.678467" />
+      <Point X="703.518555" Y="984.678467" />
+      <Point X="703.518555" Y="995" />
+      <Point X="745" Y="995" />
+      <Point X="745" Y="915" />
+      <Point X="729.1913" Y="915" />
+      <Point X="729.1913" Y="898.7932" />
+      <Point X="729.1913" Y="876.7932" />
+      <Point X="729.1913" Y="876.7932" />
+    </Link>
+    <Link From="SEG_B_22" To="SEG_B_23" FromPort="PLK1" ToPort="PLK2" IsRoutedByUser="False">
+      <Point X="749.1913" Y="876.7932" />
+      <Point X="749.1913" Y="876.7932" />
+      <Point X="749.1913" Y="898.7932" />
+      <Point X="749.1913" Y="905" />
+      <Point X="866.714844" Y="905" />
+      <Point X="866.714844" Y="858.4663" />
+      <Point X="866.714844" Y="842.4663" />
+      <Point X="866.714844" Y="842.4663" />
     </Link>
   </Links>
   <InfoElements />
