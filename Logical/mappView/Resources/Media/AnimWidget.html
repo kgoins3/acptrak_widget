@@ -313,7 +313,7 @@
 				layout.appendChild(shell);
 
 				var ghost = document.createElementNS(xmlns,'rect');
-				ghost.setAttributeNS(null,'class','c_rotate')
+				ghost.setAttributeNS(null,'class','c_rotate_smooth')
 				ghost.setAttributeNS(null,'x','-0.025');
 				ghost.setAttributeNS(null,'y','-0.0125');
 				ghost.setAttributeNS(null,'width','0.050');
@@ -393,6 +393,12 @@
 				shuttle.setAttributeNS(null,'transform','rotate('+String(360.0-animData.RotZ[i])+')');
 				container.setAttributeNS(null,'transform','translate('+String(animData.PosX[i]/1000.0)+' '+String(animData.PosY[i]/-1000.0)+')');
 
+				if (animData.RotZ[i]%180 > 175 || animData.RotZ[i]%180 < 5){
+					shuttle.setAttributeNS(null,'class','c_rotate_flat');
+				} else {
+					shuttle.setAttributeNS(null,'class','c_rotate_smooth');
+				}
+
 				if (animData.Avail[i] == 1) {
 					shuttle.setAttributeNS(null,'visibility','visible');
 				} else {
@@ -423,8 +429,12 @@
 			top: 0;
 			left: 0;
 		}
-		
-		.c_rotate{
+
+		.c_rotate_smooth {
+			transition: transform 0.1s linear;
+		}
+
+		.c_rotate_flat {
 			/* transition: none!!! */
 		}
 
@@ -455,69 +465,7 @@
 			fill: rgb(110,110,115) !important;
 		}
 
-		.trackLine {
-			stroke: rgb(70, 70, 75);
-			stroke-width: 15;
-			fill: none;
-		}
 
-		.trackPoint {
-			r: 20;
-			fill: rgb(70, 70, 75, 1);
-			stroke: #28282D;
-			stroke-width: 10;
-		}
-
-		.sectionLabel {
-			text-anchor: middle;
-			alignment-baseline: central;
-			font-family: consolas;
-			font-size: 60;
-			fill: rgb(70, 70, 75);
-		}
-
-		.targetLabel {
-			r: 38;
-			stroke-width: 5;
-			fill: #28282D;
-			stroke: rgb(150, 150, 155);
-		}
-
-		.targetText {
-			text-anchor: middle;
-			alignment-baseline: central;
-			font-family: consolas;
-			font-size: 55;
-			fill: rgb(150, 150, 155);
-		}
-
-		.targetBracket {
-			stroke: rgb(150, 150, 155);
-			stroke-width: 10;
-			fill: transparent;
-			stroke-dasharray: 232, 162;
-			stroke-dashoffset: 35;
-		}
-
-		.shuttle {
-			fill: rgb(187, 255, 0);
-			width: 152;
-			height: 70;
-		}
-
-		.shuttleTranslate {
-			transition-property: transform;
-			transition-timing-function: linear;
-			transition-duration: 100ms;
-		}
-
-		.shuttleRotate {
-			transition-property: transform;
-			transition-timing-function: linear;
-			transition-duration: 100ms;
-		}
-
-		.shuttleOffset {}
 	</style>
 
 </body>
