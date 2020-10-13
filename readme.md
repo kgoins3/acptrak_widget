@@ -22,4 +22,5 @@ The widget is built entirely with JS, HTML, & CSS- without additional frameworks
 	...
 ```
   4. Add the **WidgetData** task to the Automation Studio project and enable var *animData* in OPCUA
+  5. Add **AnimWidget.html** to **Logical/mappView/Resources/Media** and make sure it's in the .pkg file too
   5. Add an HTML Viewer widget to the mappView project. Point it to **BRVisu/Media/AnimWidget.html**

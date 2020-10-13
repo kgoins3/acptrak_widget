@@ -393,6 +393,7 @@
 				shuttle.setAttributeNS(null,'transform','rotate('+String(360.0-animData.RotZ[i])+')');
 				container.setAttributeNS(null,'transform','translate('+String(animData.PosX[i]/1000.0)+' '+String(animData.PosY[i]/-1000.0)+')');
 
+				// swap transition times based on rotation angle
 				if (animData.RotZ[i]%180 > 175 || animData.RotZ[i]%180 < 5){
 					shuttle.setAttributeNS(null,'class','c_rotate_flat');
 				} else {
