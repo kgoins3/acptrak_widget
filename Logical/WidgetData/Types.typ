@@ -4,6 +4,12 @@ TYPE
 		PosX : ARRAY[0..149]OF REAL;
 		RotZ : ARRAY[0..149]OF REAL;
 		PosY : ARRAY[0..149]OF REAL;
+		Width : ARRAY[0..149]OF REAL;
+		ExtentBack : ARRAY[0..149]OF REAL;
+		ExtentFront : ARRAY[0..149]OF REAL;
+		ColorR : ARRAY[0..149]OF REAL;
+		ColorG : ARRAY[0..149]OF REAL;
+		ColorB : ARRAY[0..149]OF REAL;
 		Avail : ARRAY[0..149]OF SINT;
 	END_STRUCT;
 END_TYPE

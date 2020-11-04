@@ -22,6 +22,12 @@
           <Variable Name="RotZ" />
           <Variable Name="PosY" />
           <Variable Name="Avail" />
+          <Variable Name="Width" />
+          <Variable Name="ExtentBack" />
+          <Variable Name="ExtentFront" />
+          <Variable Name="ColorR" />
+          <Variable Name="ColorG" />
+          <Variable Name="ColorB" />
         </Variable>
       </Task>
     </Module>

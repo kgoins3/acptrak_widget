@@ -1,4 +1,5 @@
 VAR
 	animData : animData_typ;
 	i : USINT;
+	pUserData : REFERENCE TO typShuttleUserData;
 END_VAR

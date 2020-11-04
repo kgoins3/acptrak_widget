@@ -304,6 +304,12 @@
 				PosX: [0.0],
 				PosY: [0.0],
 				RotZ: [0.0],
+				ExtentBack: [0.0],
+				ExtentFront: [0.0],
+				Width: [0.0],
+				ColorR: [0.0],
+				ColorG: [0.0],
+				ColorB: [0.0]
 			}
 
 			for (var i = 0; i < 150; i++) {
@@ -319,6 +325,7 @@
 				ghost.setAttributeNS(null,'width','0.050');
 				ghost.setAttributeNS(null,'height','0.025');
 				ghost.setAttributeNS(null,'visibility','hidden');
+				ghost.setAttributeNS(null,'clip-path','polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%)');
 				ghost.setAttributeNS(null,'id','shuttle_' + String(i));
 				shell.appendChild(ghost); // this is major, i'm onsite
 			}
@@ -384,14 +391,100 @@
 				},
 				function() {});
 
+			parent.brease.services.opcua.read([{
+				"nodeId": "::WidgetData:animData.ExtentBack",
+				"attributeId": 13
+			}]).done(
+				function(value) {
+
+					for (var i = 0; i < 150; i++) {
+						animData.ExtentBack[i] = value.results["0"].value[i];
+					}
+
+				},
+				function() {});
+
+			parent.brease.services.opcua.read([{
+				"nodeId": "::WidgetData:animData.ExtentFront",
+				"attributeId": 13
+			}]).done(
+				function(value) {
+
+					for (var i = 0; i < 150; i++) {
+						animData.ExtentFront[i] = value.results["0"].value[i];
+					}
+
+				},
+				function() {});
+
+			parent.brease.services.opcua.read([{
+				"nodeId": "::WidgetData:animData.Width",
+				"attributeId": 13
+			}]).done(
+				function(value) {
+
+					for (var i = 0; i < 150; i++) {
+						animData.Width[i] = value.results["0"].value[i];
+					}
+
+				},
+				function() {});
+
+			parent.brease.services.opcua.read([{
+				"nodeId": "::WidgetData:animData.ColorR",
+				"attributeId": 13
+			}]).done(
+				function(value) {
+
+					for (var i = 0; i < 150; i++) {
+						animData.ColorR[i] = value.results["0"].value[i];
+					}
+
+				},
+				function() {});
+
+			parent.brease.services.opcua.read([{
+				"nodeId": "::WidgetData:animData.ColorG",
+				"attributeId": 13
+			}]).done(
+				function(value) {
+
+					for (var i = 0; i < 150; i++) {
+						animData.ColorG[i] = value.results["0"].value[i];
+					}
+
+				},
+				function() {});
+
+			parent.brease.services.opcua.read([{
+				"nodeId": "::WidgetData:animData.ColorB",
+				"attributeId": 13
+			}]).done(
+				function(value) {
+
+					for (var i = 0; i < 150; i++) {
+						animData.ColorB[i] = value.results["0"].value[i];
+					}
+
+				},
+				function() {});
+
+
+
+
 			// okay, now animate keyframes
 			for (var i = 0; i < 150; i++) {
 				var shuttle = document.getElementById('shuttle_' + String(i));
 				var container = document.getElementById('container_' + String(i));
+				var color = 'rgb(' + String(animData.ColorR[i]) + ',' + String(animData.ColorG[i]) + ',' + String(animData.ColorB[i]) + ')';
+				var height = animData.Width[i]/1000.0;
+				var width = (animData.ExtentFront[i]/1000.0) + (animData.ExtentBack[i]/1000.0)
+				var scaleY = height / shuttle.getAttribute('height');
+				var scaleX = width / shuttle.getAttribute('width');
 
 				// separate transform functions so the transition/inbetweening settings can be applied individually in CSS. this solves the wrist-flip issue
-				shuttle.setAttributeNS(null,'transform','rotate('+String(360.0-animData.RotZ[i])+')');
 				container.setAttributeNS(null,'transform','translate('+String(animData.PosX[i]/1000.0)+' '+String(animData.PosY[i]/-1000.0)+')');
+				shuttle.setAttributeNS(null,'transform','rotate('+String(360.0-animData.RotZ[i])+')'+' '+'scale('+String(scaleX)+' '+String(scaleY)+')');
 
 				// swap transition times based on rotation angle
 				if (animData.RotZ[i]%180 > 175 || animData.RotZ[i]%180 < 5){
@@ -402,6 +495,7 @@
 
 				if (animData.Avail[i] == 1) {
 					shuttle.setAttributeNS(null,'visibility','visible');
+					shuttle.setAttributeNS(null,'fill',color);
 				} else {
 					shuttle.setAttributeNS(null,'visibility','hidden');
 				}
@@ -444,9 +538,9 @@
 		}
 
 		rect {
-			stroke-width: 0.005;
-			fill: rgb(60,60,65);
-			stroke: rgb(187, 255, 0);
+			/* stroke-width: 0.005; */
+			/* fill: rgb(60,60,65); */
+			/* stroke: rgb(187, 255, 0); */
 		}
 		polyline {
 			stroke: rgb(110,110,115) !important;
